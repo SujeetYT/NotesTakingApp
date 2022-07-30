@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotesTakingApp</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!--  ----------------------Title bar------------------- -->
+    <div class="heading">
+        <h2>NotesTakingApp</h2>
+    </div>
+
+    <!-- -----------------NewNote----------------- -->
+    <div class="newNote">
+        <div class="backgroundOverlay"></div>
+        <div class="makeNote">
+            <form action="/" method="post">
+                <div class="titleBox">
+                    <input type="text" name="title" id="text" placeholder="Title">
+                </div>
+                <div class="descriptionBox">
+                    <textarea name="description" id="description" placeholder="Description"></textarea>
+                </div>
+                <button id="submit">Add</button>
+            </form>    
+        </div>
+    </div>
+
+    <div class="contents">
+    <!-- ----------------Add Note------------------ -->
+        <div class="Add">
+            <div>
+                <h2>+</h2>
+                <p>Add Note</p>
+            </div>
+        </div>
+        <!-- ----------------NoteBox------------------ -->
+        <div class="container">
+            <h4><span>...</span></h4>
+            <p><span>...</span></p>
+            <hr>
+            <div class="misc">
+                <div class="time">Apri 3, 2022</div>
+                <div class="edit">
+                    <button id="pencil"><i class="fa fa-pencil"></i>&nbsp;&nbsp;&nbsp;Edit</button>
+                    <button id="trash"><i class="fa fa-trash"></i>&nbsp;&nbsp;&nbsp;Delete</button>             
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer"><p>Copyright 2022 by Sujeet Kumar. <br>All Rights Reserved.</p></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+:root{
+    --light-purple: #e052f2;
+    --dark-purple: #7229d9;
+    --dark-shadow-purple: #531ca1;
+    --Black: #1f2633;
+    --White: #eeeeee;
+    --light-pink: #f56695;
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--dark-purple); 
+    border-radius: 10px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+body{
+    background: var(--White);
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+/* -------------------------NavBar-------------------- */
+.heading{
+    width: 100%;
+    height: 2.5rem;
+    background-color: var(--dark-purple);
+    text-align: center;
+    padding: 5px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    box-shadow: #32325d40 0px 6px 12px -2px, #0000004d 0px 3px 7px -3px;
+}
+.heading h2{
+    color: var(--White);
+    font-weight: 300;
+}
+/* ---------------------Contents-------------------- */
+.contents{
+    position: relative;
+    width: 100%;
+    min-height: 80vh;
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    transform: translateY(3.5rem);
+    justify-items: center;
+    padding: 0 100px;
+}
+@media screen and (max-width : 1200px) {
+    .contents{
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: space-around;
+        padding: 0 40px;
+    }
+}
+@media screen and (max-width : 768px) {
+    .contents{
+        grid-template-columns: 1fr 1fr;
+        padding: 0 20px;
+        justify-content: space-around;
+    }
+}
+@media screen and (max-width : 600px) {
+    .contents{
+        grid-template-columns: 1fr;
+        justify-content: space-around;
+        padding: 0 20px;
+    }
+}
+/* ---------------------Add Note------------------- */
+.Add{
+    position: relative;
+    margin: 0 20px 20px;
+    width: 250px;
+    height: 350px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: #959da533 0px 8px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Add h2{
+    width: 80px;
+    height: 80px;
+    border: 2px dashed var(--dark-purple);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 100;
+    font-size: 50px;
+    color: var(--dark-purple);
+    margin: 15px 0;
+}
+.Add p{
+    color: var(--dark-purple);
+    margin: 15px 0;
+    text-align: center;
+}
+
+/* -------------------NewNote----------------------- */
+.newNote{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: transform 1s ease-in;
+}
+.backgroundOverlay{
+    width: 100%;
+    height: 100%;
+    background-color: #1f26335d;
+    backdrop-filter: blur(6px);
+    z-index: 3;
+}
+.makeNote{
+    position: absolute;
+    margin: 20px;
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: #959da533 0px 8px 24px;
+    z-index: 4;
+}
+.makeNote form{
+    height: 100%;
+    width: 100%;
+    padding: 0 10px;
+}
+.makeNote .titleBox{
+    width: 100%;
+    margin-top: 10px;
+}
+.makeNote .titleBox #text{
+    font-size: 15px;
+    width: 100%;
+    height: 100%;
+    margin: 5px 0;
+    color: var(--Black);
+    padding: 10px;
+    border: 1px solid var(--dark-purple);
+    border-radius: 5px;
+    outline:  none;
+}
+.makeNote .descriptionBox{
+    height: 70%;
+    width: 100%;
+    font-weight: 700;
+    margin: 10px 0;
+}
+.makeNote .descriptionBox #description{
+    padding: 10px;
+    width: 100%;
+    height: 300px;
+    resize: none;
+    font-size: 15px;
+    border-radius: 5px;
+    color: var(--Black);
+    border: 1px solid var(--dark-purple);
+    outline: none;
+}
+.makeNote .titleBox #text:focus,
+.makeNote .descriptionBox #description:focus{
+    border: 2px solid var(--dark-purple);
+}
+.makeNote .titleBox #text::placeholder,
+.makeNote .descriptionBox #description::placeholder{
+    font-weight: 500;
+    color: var(--dark-purple);
+    opacity: 0.3;
+    font-size: 20px;
+}
+.makeNote button{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    background-color: var(--dark-purple);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    color: var(--White);
+    cursor: pointer;
+}
+
+/* ----------------------Note Box----------------------- */
+.container{
+    position: relative;
+    margin: 0 20px 20px;
+    width: 250px;
+    height: 350px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: #959da533 0px 8px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.container h4{
+    width: 100%;
+    margin: 5px 5px;
+    text-align: left;
+}
+.container p{
+    width: 100%;
+    margin: 5px 5px;
+    text-align: left;
+}
+.container hr{
+    width: 100%;
+    margin: 10px 0;
+}
+.container .misc{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.container .misc .time{
+    text-align: center;
+}
+.container .misc .edit{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 5px 0;
+}
+.container .misc .edit button{
+    width: 50%;
+    height: 30px;
+    color: var(--White);
+    background: var(--dark-purple);
+    outline: none;
+    border: none;
+    margin: 5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .misc .edit button:active{
+    background-color: var(--dark-shadow-purple);
+}
+.container h4{
+    width: 100%;
+    height: auto;
+}
+.container p{
+    min-height: 170px;
+    width: 100%;
+}
+/* ------------------Footer Part-------------- */
+.footer{
+    position: relative;
+    bottom: 0px;
+    margin-top: 0px;
+    width: 100%;
+    padding: 20px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--dark-purple);
+    color: var(--White);
+    z-index: -1;
+}
